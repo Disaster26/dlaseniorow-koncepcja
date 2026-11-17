@@ -12,8 +12,9 @@
 
   // aktywna pozycja menu
   var linki=document.querySelectorAll('.menu a'),sek=['o-domu','mieszkania','opieka','codziennosc','cennik','kontakt'].map(function(i){return document.getElementById(i)});
-  function akt(){var y=window.scrollY+window.innerHeight*.35,id='';sek.forEach(function(s){if(s.offsetTop<=y)id=s.id});linki.forEach(function(a){a.classList.toggle('on',id?a.getAttribute('href')==='#'+id:a.getAttribute('href')==='#')})}
-  window.addEventListener('scroll',akt,{passive:true});akt();
+  var tops=[],czeka=false;function mierz(){tops=sek.map(function(s){return s.offsetTop})}
+  function akt(){czeka=false;if(!tops.length)mierz();var y=window.scrollY+window.innerHeight*.35,id='';sek.forEach(function(s,i){if(tops[i]<=y)id=s.id});linki.forEach(function(a){a.classList.toggle('on',id?a.getAttribute('href')==='#'+id:a.getAttribute('href')==='#')})}
+  window.addEventListener('scroll',function(){if(!czeka){czeka=true;requestAnimationFrame(akt)}},{passive:true});window.addEventListener('resize',function(){tops=[]});window.addEventListener('load',function(){mierz()});
 
   // pasy zdjec: przeciaganie mysza + strzalki
   document.querySelectorAll('.pas').forEach(function(p){

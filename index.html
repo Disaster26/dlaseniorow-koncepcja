@@ -8,7 +8,8 @@
 <meta name="description" content="Dom opieki Dla Seniorów w Chyliczkach między Piasecznem a Konstancinem-Jeziorną: jedno- i dwuosobowe mieszkania z łazienką i aneksem, pielęgniarki przez całą dobę, lekarze Centrum Zdrowia, codzienna rehabilitacja. Tel. 733 333 050.">
 <meta name="theme-color" content="#1C2872">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-<link rel="preload" as="image" href="img/hero-1024.webp" imagesrcset="img/hero-640.webp 640w, img/hero-1024.webp 1024w, img/hero-1600.webp 1600w, img/hero-2000.webp 2000w" imagesizes="(max-width:760px) 260vw, 100vw" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-m-720.webp" imagesrcset="img/hero-m-480.webp 480w, img/hero-m-720.webp 720w" imagesizes="100vw" media="(max-width:760px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-1600.webp" imagesrcset="img/hero-1024.webp 1024w, img/hero-1600.webp 1600w, img/hero-2000.webp 2000w" imagesizes="100vw" media="(min-width:761px)" fetchpriority="high">
 <link rel="preload" as="font" type="font/woff2" href="fonts/ubuntu-latin-500-r.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="fonts/atkinson-hyperlegible-latin-400-r.woff2" crossorigin>
 <style>
@@ -172,7 +173,8 @@ section{padding:clamp(70px,7vw,130px) 0}
 .stopka .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}
 .stopka h4{font:500 20px/1.3 Ubuntu,Arial,sans-serif;color:#fff;margin:0 0 12px}
 .stopka a{color:#e3e7f5;text-decoration:none}
-.stopka a:hover{text-decoration:underline}
+.stopka a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.35)}
+.stopka a:hover{text-decoration-color:#fff}
 .stopka ul{list-style:none;padding:0;margin:0}
 .stopka li{margin-bottom:8px}
 .stopka .logo svg{height:42px}
@@ -241,7 +243,7 @@ section{padding:clamp(70px,7vw,130px) 0}
   .tel-mob,.burger{width:50px;height:50px}
   .top .wrap{gap:10px}
   .hero{align-items:flex-end}
-  .hero picture img{object-position:70% 30%}
+  .hero picture img{object-position:50% 30%}
   .hero::before{background:linear-gradient(180deg,rgba(14,22,72,0) 0%,rgba(14,22,72,0) 22%,rgba(14,22,72,.55) 46%,rgba(14,22,72,.9) 68%,rgba(14,22,72,.94) 100%)}
   .hero-in{padding:32px 0 30px}
   .hero-txt{max-width:none}
@@ -318,8 +320,8 @@ section{padding:clamp(70px,7vw,130px) 0}
 
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="#" aria-label="Dom opieki Dla Seniorów - strona główna">
-      <svg viewBox="0 0 362 76" role="img" aria-label="DlaSeniorów"><use href="#znak" width="76" height="76" style="color:#1C2872"/><text x="88" y="55" font-family="Ubuntu,Arial,sans-serif" font-weight="500" font-size="44" fill="#1C2872" letter-spacing="-.5">DlaSeniorów</text></svg>
+    <a class="logo" href="#" aria-label="DlaSeniorów - strona główna">
+      <svg viewBox="0 0 362 76" aria-hidden="true"><use href="#znak" width="76" height="76" style="color:#1C2872"/><text x="88" y="55" font-family="Ubuntu,Arial,sans-serif" font-weight="500" font-size="44" fill="#1C2872" letter-spacing="-.5">DlaSeniorów</text></svg>
     </a>
     <nav class="menu" aria-label="Menu główne">
       <a href="#" class="on">Strona główna</a>
@@ -352,7 +354,8 @@ section{padding:clamp(70px,7vw,130px) 0}
 <main>
 <section class="hero" aria-label="Dom opieki Dla Seniorów">
   <picture>
-    <img src="img/hero-1024.webp" srcset="img/hero-640.webp 640w, img/hero-1024.webp 1024w, img/hero-1600.webp 1600w, img/hero-2000.webp 2000w" sizes="(max-width:760px) 260vw, 100vw" width="2000" height="1333" alt="Dziedziniec domu Dla Seniorów w Chyliczkach: ogród, alejki i dwupiętrowy budynek w słońcu" fetchpriority="high">
+    <source media="(max-width:760px)" srcset="img/hero-m-480.webp 480w, img/hero-m-720.webp 720w" sizes="100vw" width="720" height="1163">
+    <img src="img/hero-1600.webp" srcset="img/hero-1024.webp 1024w, img/hero-1600.webp 1600w, img/hero-2000.webp 2000w" sizes="100vw" width="2000" height="1333" alt="Dziedziniec domu Dla Seniorów w Chyliczkach: ogród, alejki i dwupiętrowy budynek w słońcu" fetchpriority="high">
   </picture>
   <div class="hero-in">
     <div class="hero-txt">
@@ -544,7 +547,7 @@ section{padding:clamp(70px,7vw,130px) 0}
         <p class="info-form" id="info-form" role="status">To podgląd strony - formularz zacznie wysyłać zapytania po wdrożeniu. Teraz prosimy o telefon: 733 333 050.</p>
       </form>
     </div>
-    <div class="mapa" id="mapa" data-src="https://maps.google.com/maps?q=Kr%C3%B3tka%201%2C%2005-500%20Chyliczki&amp;z=14&amp;output=embed" aria-label="Mapa dojazdu: ul. Krótka 1, Chyliczki"></div>
+    <div class="mapa" id="mapa" data-src="https://maps.google.com/maps?q=Kr%C3%B3tka%201%2C%2005-500%20Chyliczki&amp;z=14&amp;output=embed"></div>
   </div>
 </section>
 </main>
@@ -552,7 +555,7 @@ section{padding:clamp(70px,7vw,130px) 0}
 <footer class="stopka">
   <div class="wrap">
     <div>
-      <a class="logo" href="#" aria-label="Dla Seniorów - na górę strony"><svg viewBox="0 0 362 76" role="img" aria-label="DlaSeniorów"><use href="#znak" width="76" height="76" style="color:#fff"/><text x="88" y="55" font-family="Ubuntu,Arial,sans-serif" font-weight="500" font-size="44" fill="#fff" letter-spacing="-.5">DlaSeniorów</text></svg></a>
+      <a class="logo" href="#" aria-label="DlaSeniorów - na górę strony"><svg viewBox="0 0 362 76" aria-hidden="true"><use href="#znak" width="76" height="76" style="color:#fff"/><text x="88" y="55" font-family="Ubuntu,Arial,sans-serif" font-weight="500" font-size="44" fill="#fff" letter-spacing="-.5">DlaSeniorów</text></svg></a>
       <p style="margin:16px 0 0">Dom Opieki „Dla Seniorów”<br>ul. Krótka 1, 05-500 Chyliczki</p>
     </div>
     <div><h4>Dom</h4><ul><li><a href="#o-domu">O domu</a></li><li><a href="#mieszkania">Mieszkania</a></li><li><a href="#opieka">Opieka</a></li><li><a href="#codziennosc">Codzienność</a></li></ul></div>
